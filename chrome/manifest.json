@@ -1,0 +1,43 @@
+{
+  "version": "0.0.1",
+  "name": "chrome-react-boilerplate",
+  "manifest_version": 2,
+  "description": "chrome-react-boilerplate",
+  "browser_action": {
+    "default_title": "chrome-react-boilerplate",
+    "default_popup": "popup/index.html"
+  },
+  "icons": {
+    "16": "img/logo.png"
+  },
+  "web_accessible_resources": [
+    "lib/log.js",
+    "inject.bundle.js"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.baidu.com/*"],
+      "js": [
+        "content_script.bundle.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "background.bundle.js"
+    ]
+  },
+  "permissions": [
+    "contextMenus",
+    "management",
+    "activeTab",
+    "tabs",
+    "storage",
+    "unlimitedStorage",
+    "<all_urls>"
+  ],
+  "options_page": "options/index.html",
+  "content_security_policy": "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src * 'unsafe-inline'; object-src 'self'; img-src 'self' data:;"
+}
