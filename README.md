@@ -2,7 +2,7 @@
 
 ```
 * UI: react / react-dom / react-router-dom /
-* sotre: redux / redux-thunk
+* store: redux / redux-thunk
 * lint: eslint / lint-staged / husky
 ```
 
