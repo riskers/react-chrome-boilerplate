@@ -1,10 +1,9 @@
 ## include
 
-```
 * UI: react / react-dom / react-router-dom /
 * store: redux / redux-thunk
 * lint: eslint / lint-staged / husky
-```
+
 
 ## 结构
 
