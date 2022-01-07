@@ -25,3 +25,7 @@
 1. `npm install`
 2. `npm run dev`(dev) or `npm run build`(build)
 3. pack chrome extension zip: `npm run pack`
+
+## More Message - Typescript And CI 
+
+Have A Look -> https://github.com/riskers/github-plus-extension
