@@ -24,4 +24,4 @@
 
 1. `npm install`
 2. `npm run dev`(dev) or `npm run build`(build)
-
+3. pack chrome extension zip: `npm run pack`
