@@ -3,7 +3,7 @@
 * UI: react / react-dom / react-router-dom /
 * store: redux / redux-thunk
 * lint: eslint / lint-staged / husky
-
+* router: react-router
 
 ## 结构
 
@@ -24,3 +24,4 @@
 
 1. `npm install`
 2. `npm run dev`(dev) or `npm run build`(build)
+
