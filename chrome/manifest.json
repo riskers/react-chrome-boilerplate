@@ -1,9 +1,9 @@
 {
   "version": "0.0.1",
   "name": "chrome-react-boilerplate",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "chrome-react-boilerplate",
-  "browser_action": {
+  "action": {
     "default_title": "chrome-react-boilerplate",
     "default_popup": "popup/index.html"
   },
@@ -11,12 +11,14 @@
     "16": "img/logo.png"
   },
   "web_accessible_resources": [
-    "lib/log.js",
-    "inject.bundle.js"
+    {
+      "resources": ["lib/log.js", "inject.bundle.js"],
+      "matches": ["<all_urls>"]
+    }
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.baidu.com/*"],
+      "matches": ["https://www.google.com/*"],
       "js": [
         "content_script.bundle.js"
       ],
@@ -24,20 +26,14 @@
     }
   ],
   "background": {
-    "persistent": true,
-    "scripts": [
-      "background.bundle.js"
-    ]
+    "service_worker": "background.bundle.js",
+    "type": "module"
   },
-  "permissions": [
-    "contextMenus",
-    "management",
-    "activeTab",
-    "tabs",
-    "storage",
-    "unlimitedStorage",
+  "host_permissions": [
     "<all_urls>"
   ],
   "options_page": "options/index.html",
-  "content_security_policy": "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src * 'unsafe-inline'; object-src 'self'; img-src 'self' data:;"
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
 }

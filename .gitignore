@@ -6,6 +6,7 @@ yarn-error.log
 .DS_Store
 
 *.bundle.js
+*.map.js
 
 *.zip
 *.crx
