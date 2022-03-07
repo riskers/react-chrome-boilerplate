@@ -12,6 +12,7 @@
     "src/**/*.{js,jsx}": "eslint"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.179",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
