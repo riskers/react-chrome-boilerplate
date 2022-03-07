@@ -1,11 +1,11 @@
 ## include
 
-* UI: react / react-dom / react-router-dom /
-* store: redux / redux-thunk
-* lint: eslint / lint-staged / husky / prettier
-* router: react-router
+- UI: react / react-dom / react-router-dom /
+- store: redux / redux-thunk
+- lint: eslint / lint-staged / husky / prettier
+- router: react-router
 
-## 结构
+## structor
 
 ```bash
 | - chrome                    # All of Chrome Extension Code
@@ -15,11 +15,11 @@
             | - index.html    # option page
       | - popup
             | - index.html    # popup page
-      | - inject    
-| - src             
+      | - inject
+| - src
       | - inject  # inject script for specific page
       | - options # react code
-      | - popup   # react code 
+      | - popup   # react code
 ```
 
 ## Usage
@@ -46,6 +46,6 @@
 
 ![](https://i.imgur.com/MdNH7Vo.png)
 
-## More Message - Typescript And CI 
+## More Message - Typescript And CI
 
-Have A Look -> https://github.com/riskers/github-plus-extension
+have a Look -> https://github.com/riskers/github-plus-extension
