@@ -1,50 +1,58 @@
-const fs = require("fs");
-const path = require("path");
-const webpack = require("webpack");
+const fs = require('fs');
+const path = require('path');
+const webpack = require('webpack');
 
 const ROOT = path.resolve(__dirname);
+
+const mode = process.env.MODE;
 
 const entry = {
   background: [`${ROOT}/src/background.js`],
   content_script: [`${ROOT}/src/content_script.js`],
   inject: [`${ROOT}/src/inject/index.js`],
-  "options/index": [`${ROOT}/src/options/index`],
-  "popup/index": [`${ROOT}/src/popup/index`],
+  'options/index': [`${ROOT}/src/options/index`],
+  'popup/index': [`${ROOT}/src/popup/index`],
 };
 
-module.exports = {
+const config = {
   entry,
-  devtool: "cheap-module-source-map",
+  mode,
   output: {
     path: `${ROOT}/chrome`,
-    filename: "[name].bundle.js",
-    sourceMapFilename: "[name].bundle.map.js",
+    filename: '[name].bundle.js',
+    sourceMapFilename: '[name].bundle.map.js',
   },
   module: {
     rules: [
       {
         test: /\.js[x]?$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
         include: `${ROOT}/src`,
         use: [
           {
-            loader: "style-loader",
+            loader: 'style-loader',
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
           },
         ],
       },
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: ['.js', '.jsx'],
     alias: {
-      "@": `${ROOT}/src`,
+      '@': `${ROOT}/src`,
     },
   },
 };
+
+if (mode === 'development') {
+  config.devtool = 'cheap-module-source-map';
+}
+
+module.exports = config;
